@@ -1,7 +1,10 @@
 (ns cv-api.data
-  (:require [clj-time.core :refer [date-time]]))
+  (:require [clj-time.core :refer [date-time]]
+            [mikera.image.core :as imagez]
+            [clojure.java.io :refer [as-url]]
+            [cemerick.url :refer [url-encode]]))
 
-(def cv-data
+(def raw-data
   {:personal {:email "dwmartin41@gmail.com"
               :phone "07588361916"
               :github-user "DaveWM"
@@ -103,11 +106,11 @@
                   {:name "SQL" :experience 3.5 :type :language :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
                   {:name "Javascript" :experience 2.5 :type :language :img "https://www.codementor.io/assets/page_img/learn-javascript.png"}
                   {:name "HTML 5" :experience 2.5 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1000px-HTML5_logo_and_wordmark.svg.png"}
-                  {:name "CSS3" :experience 2.5 :type :language :img "http://ohdoylerules.com/content/images/css3.svg"}
+                  {:name "CSS3" :experience 2.5 :type :language :img "http://connexo.de/img/logos/CSS3_Logo.png"}
                   {:name "SCSS" :experience 0.5 :type :language :img "http://codezyn.com/wassup/wp-content/uploads/2014/10/317889.png"}
                   {:name "LESS" :experience 2.5 :type :language :img "http://lesscss.org/public/img/logo.png"}
                   {:name "Clojure" :experience 0.75 :type :language :img "https://pupeno.files.wordpress.com/2015/08/clojure-logo.png"}
-                  {:name "TypeScript" :experience 0.25 :type :language :img "http://blog.teamtreehouse.com/wp-content/uploads/2015/05/87a5a0fdc86455c3f94b0b0eebfdb1b9_400x400.png"}
+                  {:name "TypeScript" :experience 0.25 :type :language :img "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"}
                   {:name "Python" :experience 0.5 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"}
 
                   {:name "AngularJS" :experience 2.5 :type :FE :img "https://avatars0.githubusercontent.com/u/139426?v=3&s=400"}
@@ -120,29 +123,29 @@
                   {:name "Redux" :experience 0.5 :type :FE :img "https://react-redux.herokuapp.com/logo.jpg"}
                   {:name "D3" :experience 0.5 :type :FE :img "https://portalvhds06sf0zbnycwtg.blob.core.windows.net/uploads/D3.js_product_img_789405957_d4.png"}
                   {:name "RxJS" :experience 0.5 :type :FE :img "https://avatars3.githubusercontent.com/u/984368?v=3&s=400"}
-                  {:name "Backbone" :experience 0.5 :type :FE :img "http://www.codeforest.net/wp-content/uploads/2013/05/backbone.png"}
+                  {:name "Backbone" :experience 0.5 :type :FE :img "http://2.bp.blogspot.com/-xdZxDAStMTc/UQRY8nCnmuI/AAAAAAAAW98/sqp4pXNrlE8/s1600/Backbone_logo_logo_only.png"}
 
-                  {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://www.asphostdirectory.com/Images/lg_aspmvc5.png"}
+                  {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://uitpakistan.com/Assets/images/awards/Mvc1.png"}
                   {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
                   {:name "WCF" :experience 3 :type :BE :img "http://gallery.binarybits.net/Images/Blog/Programming/Mixed%20WCF%20Service/WCF_logo.png"}
-                  {:name "Entity Framework" :experience 2.5 :type :BE :img "http://blog.falafel.com/wp-content/uploads/2014/07/entity_image.png"}
+                  {:name "Entity Framework" :experience 2.5 :type :BE :img "http://www.ryadel.com/wp-content/uploads/2015/03/entity-framework-logo.jpg"}
                   {:name "Express" :experience 0.75 :type :BE :img "http://mean.io/system/assets/img/logos/express.png"}
                   {:name "Django" :experience 0.5 :type :BE :img "https://www.djangoproject.com/s/img/logos/django-logo-negative.png"}
                   {:name "Socket.io" :experience 0.3 :type :BE :img "https://www.pubnub.com/blog/wp-content/uploads/2014/07/SOCKETIOICON.gif"}
                   {:name "SignalR" :experience 0.75 :type :BE :img "https://avatars3.githubusercontent.com/u/931666?v=3&s=200"}
 
                   {:name "NPM" :experience 2 :type :tool :img "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/2000px-Npm-logo.svg.png"}
-                  {:name "Bower" :experience 2 :type :tool :img "http://bower.io/img/bower-logo.png"}
+                  {:name "Bower" :experience 2 :type :tool :img "http://bradypodion.io/images/giants/e8225b4f.bower.png"}
                   {:name "NuGet" :experience 3 :type :tool :img "http://nuproj.net/images/NuGet.png"}
                   {:name "Grunt" :experience 2 :type :tool :img "http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png"}
                   {:name "Gulp" :experience 1.25 :type :tool :img "https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png"}
-                  {:name "Babel" :experience 1 :type :tool :img "https://cms-assets.tutsplus.com/uploads/users/71/courses/608/preview_image/babel-1.png"}
+                  {:name "Babel" :experience 1 :type :tool :img "https://raw.githubusercontent.com/babel/logo/master/babel.png"}
                   {:name "Browserify" :experience 1 :type :tool :img "https://d21ii91i3y6o6h.cloudfront.net/gallery_images/from_proof/1647/large/1405586570/browserify-2-hexagon-sticker.png"}
-                  {:name "Webpack" :experience 0.25 :type :tool :img "http://reapp.io/images/webpack.svg"}
+                  {:name "Webpack" :experience 0.25 :type :tool :img "http://lukehansell.co.uk/images/webpack-logo.png"}
 
                   {:name "SQL Server" :experience 3.5 :type :DataStore :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
                   {:name "MongoDB" :experience 0.75 :type :DataStore :img "http://www.theodo.fr/uploads/blog//2015/11/mongodb.png"}
-                  {:name "Google Cloud Datastore" :experience 0.5 :type :DataStore :img "http://www.dotmodus.com/assets/images/clouddatastore.jpeg"}
+                  {:name "Google Cloud Datastore" :experience 0.5 :type :DataStore :img "http://www.datatechnology.co.uk/wp-content/uploads/2014/09/CloudDataStore_500px.png"}
                   {:name "Elastic" :experience 0.5 :type :DataStore :img "https://avatars0.githubusercontent.com/u/6764390?v=3&s=400"}
                   {:name "Firebase" :experience 0.5 :type :DataStore :img "https://lh3.googleusercontent.com/-whXBCDVxIto/Vz2Rsyz-UjI/AAAAAAAAiJc/UjvR-M2b9tY5SyKFkDY6Q_MbusEINRXkQ/w1024-h1024/Firebase_16-logo.png"}
 
@@ -153,7 +156,7 @@
                   {:name "NSubstitute" :experience 1 :type :Testing :img "http://nsubstitute.github.io/images/nsubstitute-100x100.png"}
                   {:name "Moq" :experience 1 :type :Testing :img "https://avatars3.githubusercontent.com/u/1434934?v=3&s=400"}
 
-                  {:name "Docker" :experience 0.75 :type :Misc :img "http://blog.xebialabs.com/wp-content/uploads/2015/09/docker.png"}
+                  {:name "Docker" :experience 0.75 :type :Misc :img "https://secure.gravatar.com/avatar/26da7b36ff8bb5db4211400358dc7c4e.jpg?s=512&r=g&d=mm"}
                   {:name "Graylog" :experience 0.75 :type :Misc :img "https://www.graylog.org/assets/logo-graylog-6ccfb3d4f7bfd0795c80bb616719f7d2f5151283f25c62aa0a6222994af2abeb.png"}
                   {:name "RabbitMQ" :experience 0.75 :type :Misc :img "https://www.rabbitmq.com/img/rabbitmq_logo_strap.png"}
 
@@ -162,3 +165,18 @@
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
                   ]})
+
+(defn process-cv-data! [data]
+  (update data :technologies (partial map (fn [{:keys [img name] :as tech}]
+                                            (let [image-name (str name ".png")
+                                                  root-path "resources/public/technologies/"
+                                                  image-path (str root-path image-name)
+                                                  url-encoded-path (str root-path (url-encode image-name))]
+                                              (-> (as-url img)
+                                                  (imagez/load-image)
+                                                  (imagez/resize 200)
+                                                  (imagez/write image-path "png" :quality 0.8))
+                                              (assoc tech :img url-encoded-path))))))
+
+(def cv-data (process-cv-data! raw-data))
+

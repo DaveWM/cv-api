@@ -6,7 +6,9 @@
                  [ring/ring-defaults "0.2.1"]
                  [clj-time "0.12.0"]
                  [cheshire "5.6.3"]
-                 [hiccup "1.0.5"]]
+                 [hiccup "1.0.5"]
+                 [net.mikera/imagez "0.10.0"]
+                 [com.cemerick/url "0.1.1"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler cv-api.handler/app}
   :profiles
