@@ -1,7 +1,7 @@
 (defproject cv-api "0.1.0"
   :description "API for my CV data"
   :min-lein-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.9.0-alpha10"]
                  [ring "1.5.0"]
                  [compojure "1.5.1"]
                  [ring/ring-defaults "0.2.1"]
