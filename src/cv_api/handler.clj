@@ -6,7 +6,9 @@
             [cheshire.core :refer [generate-string]]
             [cheshire.generate :refer [add-encoder]]
             [clj-time.format :as f]
-            [cv-api.data :refer [cv-data]]))
+            [cv-api.data :refer [cv-data]]
+            [cv-api.pages :refer [cv-hiccup]]
+            [hiccup.core :refer [html]]))
 
 (add-encoder org.joda.time.DateTime
              (fn [date jsonGenerator]
@@ -17,8 +19,14 @@
    :headers {"content-type" "application/json"}
    :body (generate-string cv-data)})
 
+(defn render-page [hiccup]
+  {:status 200
+   :headers {"content-type" "text/html"}
+   :body (html hiccup)})
+
 (defroutes app-routes
   (GET "/api/cv" [] get-cv-json)
+  (GET "/cv" [] (render-page (cv-hiccup cv-data)))
   (route/resources "/resources/public")
   (route/not-found "Not Found"))
 

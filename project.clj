@@ -10,7 +10,9 @@
                  [hiccup "1.0.5"]
                  [net.mikera/imagez "0.10.0"]
                  [clj-aws-s3 "0.3.10"]
-                 [environ "1.1.0"]]
+                 [environ "1.1.0"]
+                 [hiccup "1.0.5"]
+                 [endophile "0.1.2"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler cv-api.handler/app}
   :profiles

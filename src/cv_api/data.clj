@@ -20,6 +20,7 @@
               :linkedin-url "https://www.linkedin.com/in/davewm"
               :codewars-user "DaveWM"}
    :summary "I am a senior front end web developer with a strong mathematical background, and 4.5 years' programming experience across a variety of industries. I also have experience with back end programming in ASP.NET MVC/Web API and Django/[Djangae](https://potatolondon.github.io/djangae/), designing/architecting systems, and setting up continuous integration.
+
 * On the front end, I have extensive experience with angularjs, angular material, browserify, npm, gulp, babel, karma and protractor. In my personal projects, I am currently using clojurescript and reagent. I have also used react, redux and RxJS.
 * On the back end, I have 2 years’ experience with ASP.NET (MVC and Web API), entity framework, and testing frameworks Nunit and specflow. I also have a small amount of experience with django (running on google appengine using djangae), ring, and sente.
 * I have a small amount of experience writing scripts, in nodejs, bash and F#.
@@ -173,7 +174,25 @@
                   {:name "AWS" :experience 0.5 :type :Cloud :img "http://static.asish.com.au/wp-content/uploads/2015/06/aws-logo-square-02.png"}
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
-                  ]})
+                  ]
+   :projects "* davewm.github.io – my online CV, written using clojurescript, reagent, D3, and reagent-material-ui. Hosted on github pages.
+* Phonsole (working title) – an app which allows you to use your phone to view console output from your PC. It’s split into 3 parts:
+* Server – written in clojure, using ring and sente.
+* Client – written in clojurescript, using re-frame and materialize css.
+* CLI – a nodejs app written in clojurescript. Published on npm as phonsole.
+* Reagent-material-ui – a reagent wrapper for Material UI
+* Abode – a web app for people living in a house share. It is an angularjs SPA with an asp.net web api 2 back end. I also published abode to the android app store as a phonegap hybrid app.
+* MyGit – a github client for windows phone 8.1
+* ngWizard – a wizard directive for angularjs.
+
+I am a big fan of open source projects, and I have made some small contributions to:
+
+* Sente
+* Octokit.net
+* Angular Material
+* UI Bootstrap
+* AngularStrap
+* Angular-local-storage"})
 
 (def bucket "cv-api")
 
