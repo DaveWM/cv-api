@@ -9,6 +9,10 @@
   (:import [javax.imageio ImageIO])
   (:import [java.io]))
 
+(def base-url "https://cv-api.herokuapp.com/")
+(defmacro resource [path]
+  (str base-url path))
+
 (def raw-data
   {:personal {:email "dwmartin41@gmail.com"
               :phone "07588361916"
@@ -37,15 +41,15 @@
                              "11 GCSEs"]}]
    :hobbies [{:title "Motorsport"
               :description "I Race in the Track Attack MR2 Series"
-              :img "assets/racing.jpg"}
+              :img (resource "resources/public/racing.jpg")}
              {:title "Reading"
               :description "I'm a big fan of sci-fi books"
-              :img "resources/public/hyperion.jpg"}
+              :img (resource "resources/public/hyperion.jpg")}
              {:title "Snowboarding"
               :description "I enjoy snowboarding during the winter"
-              :img "resources/public/snowboarding.jpg"}]
+              :img (resource "resources/public/snowboarding.jpg")}]
    :work-history [{:title "Potato"
-                   :img "resources/public/P.png"
+                   :img (resource "resources/public/P.png")
                    :from (date-time 2015 11 1)
                    :to nil
                    :url  "https://p.ota.to/"
@@ -53,7 +57,7 @@
                                    "Deployed apps to google app engine."
                                    "Working on an internal web app, using ES6, react and redux. I added tests using mocha, chai and sinon."]}
                   {:title "Sporting Solutions"
-                   :img "resources/public/SS.png"
+                   :img (resource "resources/public/SS.png")
                    :from (date-time 2015 4 1)
                    :to (date-time 2015 11 1)
                    :url "http://www.sportingsolutions.com"
@@ -68,7 +72,7 @@
                                    "Created the [ObjectDiffer](https://github.com/sportingsolutions/ObjectDiffer) and [GraylogApiHelpers](https://github.com/sportingsolutions/SS.GraylogApiHelpers) open source projects."
                                    ]}
                   {:title "Blinkbox"
-                   :img "resources/public/BB.png"
+                   :img (resource "resources/public/BB.png")
                    :from (date-time 2014 5 1)
                    :to (date-time 2015 4 1)
                    :url "http://www.blinkbox.com/"
@@ -77,7 +81,7 @@
                                    "Worked with build tools such as grunt, bower and npm, as well as testing frameworks such as karma and protractor"
                                    "My team (for which I was lead developer) came second in the company hackathon."]}
                   {:title "Globecast"
-                   :img "resources/public/GC.jpg"
+                   :img (resource "resources/public/GC.jpg")
                    :from (date-time 2013 11 1)
                    :to (date-time 2014 4 1)
                    :url "http://www.globecast.com/"
@@ -89,7 +93,7 @@
                                    "Performed several video file migrations from one storage system to another ¡V several hundred terabytes of data in total."
                                    ]}
                   {:title "CPL Software"
-                   :img "resources/public/CPL.jpg"
+                   :img (resource "resources/public/CPL.jpg")
                    :from (date-time 2011 12 1)
                    :to (date-time 2013 11 1)
                    :url "http://www.cplsoftware.com/"
@@ -101,7 +105,7 @@
                                    "Worked on a web portal written in MVC 2 (involved use of jquery, ajax and css)"
                                    "Worked on a prototype web app in MVC 4 (using technologies such as twitter bootstrap, angular js, and DevExpress MVC controls)"]}
                   {:title "Redwood Technologies"
-                   :img "resources/public/RW.png"
+                   :img (resource "resources/public/RW.png")
                    :from (date-time 2011 8 1)
                    :to (date-time 2011 11 1)
                    :url "http://www.RedwoodTech.com"
