@@ -9,7 +9,8 @@
                  [cheshire "5.6.3"]
                  [hiccup "1.0.5"]
                  [net.mikera/imagez "0.10.0"]
-                 [com.cemerick/url "0.1.1"]]
+                 [clj-aws-s3 "0.3.10"]
+                 [environ "1.1.0"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler cv-api.handler/app}
   :profiles

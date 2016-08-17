@@ -1,8 +1,13 @@
 (ns cv-api.data
   (:require [clj-time.core :refer [date-time]]
             [mikera.image.core :as imagez]
-            [clojure.java.io :refer [as-url]]
-            [cemerick.url :refer [url-encode]]))
+            [clojure.java.io :refer [as-url input-stream as-file]]
+            [aws.sdk.s3 :as s3]
+            [clojure.string :refer [replace lower-case]]
+            [cheshire.core :refer [parse-string]]
+            [environ.core :refer [env]])
+  (:import [javax.imageio ImageIO])
+  (:import [java.io]))
 
 (def raw-data
   {:personal {:email "dwmartin41@gmail.com"
@@ -166,17 +171,37 @@
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
                   ]})
 
+(def bucket "cv-api")
+
+(def credentials (let [cred-file (as-file "aws-credentials.json")]
+                   (if (.exists cred-file)
+                     (-> (slurp cred-file)
+                         (parse-string true))
+                     (->> [:access-key :secret-key]
+                          (map (fn [key] {key (env key)}))
+                          (apply merge)))))
+
+(defn upload-to-s3! [image key]
+  (let [out-stream (java.io.ByteArrayOutputStream.)]
+    (ImageIO/write image "png" out-stream)
+    (let [put-object! (->> (.toByteArray out-stream)
+                           java.io.ByteArrayInputStream.
+                           (partial s3/put-object credentials bucket key))]
+      (put-object! {:content-type "img/png"} (s3/grant :all-users :read)))))
+
 (defn process-cv-data! [data]
   (update data :technologies (partial map (fn [{:keys [img name] :as tech}]
-                                            (let [image-name (str name ".png")
-                                                  root-path "resources/public/technologies/"
-                                                  image-path (str root-path image-name)
-                                                  url-encoded-path (str root-path (url-encode image-name))]
+                                            (let [s3-key (-> name
+                                                             (replace "#" "sharp")
+                                                             (replace " " "-")
+                                                             lower-case
+                                                             (str ".png"))]
                                               (-> (as-url img)
                                                   (imagez/load-image)
                                                   (imagez/resize 200)
-                                                  (imagez/write image-path "png" :quality 0.8))
-                                              (assoc tech :img url-encoded-path))))))
+                                                  (upload-to-s3! s3-key))
+                                              (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))))
 
 (def cv-data (process-cv-data! raw-data))
+
 
