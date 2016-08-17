@@ -22,7 +22,17 @@
   (route/resources "/resources/public")
   (route/not-found "Not Found"))
 
+(defn wrap-cors
+  "Allow requests from all origins"
+  [handler]
+  (fn [request]
+    (let [response (handler request)]
+      (update-in response
+                 [:headers "Access-Control-Allow-Origin"]
+                 (fn [_] "*")))))
+
 (def app
   (-> app-routes
       (wrap-reload)
-      (wrap-defaults site-defaults)))
+      (wrap-defaults site-defaults)
+      (wrap-cors)))
