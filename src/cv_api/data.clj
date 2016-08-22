@@ -212,19 +212,20 @@ I am a big fan of open source projects, and I have made some small contributions
                            (partial s3/put-object credentials bucket key))]
       (put-object! {:content-type "img/png"} (s3/grant :all-users :read)))))
 
-(defn process-cv-data! [data]
-  (update data :technologies (partial map (fn [{:keys [img name] :as tech}]
-                                            (let [s3-key (-> name
-                                                             (replace "#" "sharp")
-                                                             (replace " " "-")
-                                                             lower-case
-                                                             (str ".png"))]
-                                              (-> (as-url img)
-                                                  (imagez/load-image)
-                                                  (imagez/resize 200)
-                                                  (upload-to-s3! s3-key))
-                                              (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))))
-
-(def cv-data (process-cv-data! raw-data))
+(def cv-data
+  (update raw-data :technologies #(->> %
+                                       (map (fn [{:keys [img name] :as tech}]
+                                              (let [s3-key (-> name
+                                                               (replace "#" "sharp")
+                                                               (replace " " "-")
+                                                               lower-case
+                                                               (str ".png"))]
+                                                (-> (as-url img)
+                                                    (imagez/load-image)
+                                                    (imagez/resize 200)
+                                                    (upload-to-s3! s3-key)
+                                                    )
+                                                (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
+                                       doall)))
 
 
