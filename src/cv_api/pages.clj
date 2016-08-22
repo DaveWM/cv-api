@@ -36,53 +36,56 @@
 
 (defn cv-hiccup [{:keys [personal summary technologies projects work-history education hobbies]}]
   [:html
+   [:head
+    [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}]]
    [:body
-    [:h1 "David Martin – Curriculum Vitae"]
-    
-    [:h2 "Personal"]
-    [:dl
-     (let [email (:email personal)
-           github (str "https://github.com/" (:github-user personal))
-           codewars (str "https://www.codewars.com/users/" (:codewars-user personal))]
-       (->> [["Full Name" "David William Martin"]
-             ["Date of Birth" "30/07/1990"]
-             ["Nationality" "British"]
-             ["Address" "3 Gassiot Road, Tooting, London, SW17 8LB"]
-             ["Email" [:a {:href (str "mailto:" email)} email]]
-             ["Github" (link github)]
-             ["Codewars" (link codewars)]
-             ["Websites" [:ul
-                          [:li (link "https://davewm.github.io")]
-                          [:li (link "https://www.phonsole.co.uk")]]]]
-            (mapcat
-             (fn [[title detail]]
-               [[:dt title]
-                [:dd detail]]))))]
-    
-    [:h2 "Summary"]
-    [:p (markdown summary)]
+    [:div {:class "container"}
+     [:h1 {:class "text-center"} "David Martin – Curriculum Vitae"]
+     
+     [:h2 "Personal"]
+     [:dl
+      (let [email (:email personal)
+            github (str "https://github.com/" (:github-user personal))
+            codewars (str "https://www.codewars.com/users/" (:codewars-user personal))]
+        (->> [["Full Name" "David William Martin"]
+              ["Date of Birth" "30/07/1990"]
+              ["Nationality" "British"]
+              ["Address" "3 Gassiot Road, Tooting, London, SW17 8LB"]
+              ["Email" [:a {:href (str "mailto:" email)} email]]
+              ["Github" (link github)]
+              ["Codewars" (link codewars)]
+              ["Websites" [:ul
+                           [:li (link "https://davewm.github.io")]
+                           [:li (link "https://www.phonsole.co.uk")]]]]
+             (mapcat
+              (fn [[title detail]]
+                [[:dt title]
+                 [:dd detail]]))))]
+     
+     [:h2 "Summary"]
+     [:p (markdown summary)]
 
-    [:h2 "Technical Skills"]
-    [:dl
-     (->> (-> (group-by :type technologies)
-              (rename-keys tech-type-map))
-          sort
-          (mapcat (fn [[type techs]]
-                    [[:dt type]
-                     [:dd
-                      [:ul (map (fn [tech] [:li (:name tech)]) (sort-by :name techs))]]])))]
+     [:h2 "Technical Skills"]
+     [:dl
+      (->> (-> (group-by :type technologies)
+               (rename-keys tech-type-map))
+           sort
+           (mapcat (fn [[type techs]]
+                     [[:dt type]
+                      [:dd
+                       [:ul (map (fn [tech] [:li (:name tech)]) (sort-by :name techs))]]])))]
 
-    [:h2 "Hobby Projects"]
-    [:p (markdown projects)]
+     [:h2 "Hobby Projects"]
+     [:p (markdown projects)]
 
-    [:h2 "Employment History"]
-    (map (fn [{:keys [title from to url bullet-points]}] (workplace title from to bullet-points :url url)) work-history)
+     [:h2 "Employment History"]
+     (map (fn [{:keys [title from to url bullet-points]}] (workplace title from to bullet-points :url url)) work-history)
 
-    [:h2 "Education"]
-    (map (fn [{:keys [name from to highlights]}] (workplace name from to highlights)) education)
+     [:h2 "Education"]
+     (map (fn [{:keys [name from to highlights]}] (workplace name from to highlights)) education)
 
-    [:h2 "Interests"]
-    [:ul
-     (map (fn [{:keys [title description]}] [:li (str title " - " description)]) hobbies)]
+     [:h2 "Interests"]
+     [:ul
+      (map (fn [{:keys [title description]}] [:li (str title " - " description)]) hobbies)]
 
-    [:p "References available upon request"]]])
+     [:p {:class "help-block"} "References available upon request"]]]])
