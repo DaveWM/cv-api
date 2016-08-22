@@ -37,7 +37,8 @@
 (defn cv-hiccup [{:keys [personal summary technologies projects work-history education hobbies]}]
   [:html
    [:head
-    [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}]]
+    [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}]
+    [:title "CV | David Martin"]]
    [:body
     [:div {:class "container"}
      [:h1 {:class "text-center"} "David Martin – Curriculum Vitae"]
