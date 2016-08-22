@@ -207,10 +207,11 @@ I am a big fan of open source projects, and I have made some small contributions
 (defn upload-to-s3! [image key]
   (let [out-stream (java.io.ByteArrayOutputStream.)]
     (ImageIO/write image "png" out-stream)
-    (let [put-object! (->> (.toByteArray out-stream)
+    (let [bytes (.toByteArray out-stream)
+          put-object! (->> bytes
                            java.io.ByteArrayInputStream.
                            (partial s3/put-object credentials bucket key))]
-      (put-object! {:content-type "img/png"} (s3/grant :all-users :read)))))
+      (put-object! {:content-type "img/png" :content-length (alength bytes)} (s3/grant :all-users :read)))))
 
 (def cv-data
   (update raw-data :technologies #(->> %
