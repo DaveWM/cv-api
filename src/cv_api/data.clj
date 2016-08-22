@@ -141,7 +141,7 @@
 
                   {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://uitpakistan.com/Assets/images/awards/Mvc1.png"}
                   {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
-                  {:name "WCF" :experience 3 :type :BE :img "http://gallery.binarybits.net/Images/Blog/Programming/Mixed%20WCF%20Service/WCF_logo.png"}
+                  {:name "WCF" :experience 3 :type :BE :img "http://www.howcsharp.com/img/0/44/windows-communication-foundation-wcf-300x222.jpg"}
                   {:name "Entity Framework" :experience 2.5 :type :BE :img "http://www.ryadel.com/wp-content/uploads/2015/03/entity-framework-logo.jpg"}
                   {:name "NodeJS" :experience 2 :type :BE :img "https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png"}
                   {:name "Express" :experience 0.75 :type :BE :img "http://mean.io/system/assets/img/logos/express.png"}
@@ -217,13 +217,15 @@ I am a big fan of open source projects, and I have made some small contributions
                           (apply merge)))))
 
 (defn upload-to-s3! [image key]
+  (println "uploading" key)
   (let [out-stream (java.io.ByteArrayOutputStream.)]
     (ImageIO/write image "png" out-stream)
     (let [bytes (.toByteArray out-stream)
-          put-object! (->> bytes
-                           java.io.ByteArrayInputStream.
-                           (partial s3/put-object credentials bucket key))]
-      (put-object! {:content-type "img/png" :content-length (alength bytes)} (s3/grant :all-users :read)))))
+          in-stream (java.io.ByteArrayInputStream. bytes)]
+      (s3/put-object credentials bucket key in-stream {:content-type "img/png" :content-length (alength bytes)} (s3/grant :all-users :read))
+      (.close in-stream)
+      (.close out-stream)
+      (println "upload complete" key))))
 
 (def cv-data
   (update raw-data :technologies #(->> %
