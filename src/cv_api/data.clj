@@ -175,15 +175,15 @@
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
                   ]
-   :projects "* davewm.github.io – my online CV, written using clojurescript, reagent, D3, and reagent-material-ui. Hosted on github pages.
-* Phonsole (working title) – an app which allows you to use your phone to view console output from your PC. It’s split into 3 parts:
-* Server – written in clojure, using ring and sente.
-* Client – written in clojurescript, using re-frame and materialize css.
-* CLI – a nodejs app written in clojurescript. Published on npm as phonsole.
-* Reagent-material-ui – a reagent wrapper for Material UI
-* Abode – a web app for people living in a house share. It is an angularjs SPA with an asp.net web api 2 back end. I also published abode to the android app store as a phonegap hybrid app.
-* MyGit – a github client for windows phone 8.1
-* ngWizard – a wizard directive for angularjs.
+   :projects "* [davewm.github.io](https://davewm.github.io) – my online CV, written using clojurescript, reagent, D3, and reagent-material-ui. Hosted on github pages.
+* [Phonsole](https://www.phonsole.co.uk) – an app which allows you to use your phone to view console output from your PC. It’s split into 3 parts:
+    * [Server](https://github.com/DaveWM/phonsole-server) – written in clojure, using ring and sente.
+    * [Client](https://github.com/DaveWM/phonsole-client) – written in clojurescript, using re-frame and materialize css.
+    * [CLI](https://github.com/DaveWM/phonsole-cli) – a nodejs app written in clojurescript. Published on npm as phonsole.
+* [Reagent-material-ui](https://github.com/DaveWM/reagent-material-ui) – a reagent wrapper for Material UI
+* [ngWizard](https://github.com/DaveWM/ngWizard) – a wizard directive for angularjs.
+* [Abode](https://github.com/DaveWM/Abode) – a web app for people living in a house share. It is an angularjs SPA with an asp.net web api 2 back end. I also published abode to the android app store as a phonegap hybrid app.
+* [MyGit](https://github.com/DaveWM/MyGit) – a github client for windows phone 8.1
 
 I am a big fan of open source projects, and I have made some small contributions to:
 
