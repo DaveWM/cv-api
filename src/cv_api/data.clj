@@ -227,7 +227,7 @@ I am a big fan of open source projects, and I have made some small contributions
 
 (def cv-data
   (update raw-data :technologies #(->> %
-                                       (map (fn [{:keys [img name] :as tech}]
+                                       (pmap (fn [{:keys [img name] :as tech}]
                                               (let [s3-key (-> name
                                                                (replace "#" "sharp")
                                                                (replace " " "-")
