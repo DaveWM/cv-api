@@ -32,7 +32,7 @@
    (when url
      [:a {:href url} url])
    [:ul
-    (map (fn [bp] [:li bp]) bullet-points)]])
+    (map (fn [bp] [:li (markdown bp)]) bullet-points)]])
 
 (defn cv-hiccup [{:keys [personal summary technologies projects work-history education hobbies]}]
   [:html
