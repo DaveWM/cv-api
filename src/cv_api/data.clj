@@ -160,7 +160,7 @@
                   {:name "Babel" :experience 1 :type :tool :img "https://raw.githubusercontent.com/babel/logo/master/babel.png"}
                   {:name "Leiningen" :experience 1.2 :type :tool :img "http://leiningen.org/img/leiningen.jpg"}
                   {:name "Browserify" :experience 1 :type :tool :img "https://d21ii91i3y6o6h.cloudfront.net/gallery_images/from_proof/1647/large/1405586570/browserify-2-hexagon-sticker.png"}
-                  {:name "Webpack" :experience 0.25 :type :tool :img "http://lukehansell.co.uk/images/webpack-logo.png"}
+                  {:name "Webpack" :experience 0.25 :type :tool :img "https://topheman.github.io/webpack-babel-starter/assets/974262647c82057b6078c432841a53ea.png"}
 
                   {:name "SQL Server" :experience 3.5 :type :DataStore :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
                   {:name "MongoDB" :experience 0.75 :type :DataStore :img "http://www.theodo.fr/uploads/blog//2015/11/mongodb.png"}
