@@ -235,11 +235,11 @@ I am a big fan of open source projects, and I have made some small contributions
                                                                (replace " " "-")
                                                                lower-case
                                                                (str ".png"))]
-                                                (-> (as-url img)
-                                                    (imagez/load-image)
-                                                    (imagez/resize 200)
-                                                    (upload-to-s3! s3-key))
+                                                (try
+                                                  (-> (as-url img)
+                                                      (imagez/load-image)
+                                                      (imagez/resize 200)
+                                                      (upload-to-s3! s3-key))
+                                                  (catch Exception e (println s3-key (.getMessage e))))
                                                 (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
                                        doall)))
-
-
