@@ -50,7 +50,7 @@
               :description "I enjoy snowboarding during the winter"
               :img (resource "resources/public/snowboarding.jpg")}]
    :work-history [{:title "UVD"
-                   :img (resource "resources/public/UVD.svg")
+                   :img (resource "resources/public/UVD.png")
                    :from (date-time 2016 9 1)
                    :to nil
                    :url "https://uvd.co.uk"
