@@ -152,7 +152,7 @@
                   {:name "Material UI" :experience 0.5 :type :FE :img "http://cdn.designbeep.com/wp-content/uploads/2014/11/material-ui.jpg"}
                   {:name "Materialize" :experience 0.3 :type :FE :img "http://materializecss.com/images/favicon/apple-touch-icon-152x152.png"}
                   {:name "NgRx" :experience 0.4 :type :FE :img "http://bertrandg.github.io/images/ng2_state/ngrx.png"}
-                  {:name "DataScript" :experience 0.4 :type :FE :img "https://camo.githubusercontent.com/9576102b6c59129317b2095b7c5c11ccb5eb9d44/687474703a2f2f732e746f6e736b792e6d652f696d67732f646174617363726970745f6c6f676f2e737667"}
+                  {:name "DataScript" :experience 0.4 :type :FE :img "https://s3-eu-west-1.amazonaws.com/cv-api/datascript.png"}
 
                   {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://uitpakistan.com/Assets/images/awards/Mvc1.png"}
                   {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
@@ -173,13 +173,13 @@
                   {:name "NuGet" :experience 3 :type :tool :img "http://nuproj.net/images/NuGet.png"}
                   {:name "Grunt" :experience 2 :type :tool :img "http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png"}
                   {:name "Gulp" :experience 1.25 :type :tool :img "https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png"}
-                  {:name "Make" :experience 0.5 :type :tool :img "https://www.gnu.org/graphics/gnu-head-30-years-anniversary.svg"}
+                  {:name "Make" :experience 0.5 :type :tool :img "http://logonoid.com/images/gnu-logo.png"}
                   {:name "Babel" :experience 1 :type :tool :img "https://raw.githubusercontent.com/babel/logo/master/babel.png"}
                   {:name "Leiningen" :experience 2.2 :type :tool :img "http://leiningen.org/img/leiningen.jpg"}
                   {:name "Boot" :experience 0.1 :type :tool :img "http://boot-clj.com/assets/images/logos/boot-logo-3.png"}
                   {:name "Browserify" :experience 1 :type :tool :img "https://d21ii91i3y6o6h.cloudfront.net/gallery_images/from_proof/1647/large/1405586570/browserify-2-hexagon-sticker.png"}
                   {:name "Webpack" :experience 0.5 :type :tool :img "https://topheman.github.io/webpack-babel-starter/assets/974262647c82057b6078c432841a53ea.png"}
-                  {:name "Rollup" :experience 0.5 :type :tool :img "https://rollupjs.org/logo.svg"}
+                  {:name "Rollup" :experience 0.5 :type :tool :img "https://i0.wp.com/wp.laravel-news.com/wp-content/uploads/2016/11/rollup1.png?resize=1400%2C709"}
 
                   {:name "SQL Server" :experience 3.5 :type :DataStore :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
                   {:name "MongoDB" :experience 0.75 :type :DataStore :img "http://www.theodo.fr/uploads/blog//2015/11/mongodb.png"}
@@ -207,7 +207,7 @@
                   {:name "AWS" :experience 1.5 :type :Cloud :img "http://static.asish.com.au/wp-content/uploads/2015/06/aws-logo-square-02.png"}
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
-                  {:name "Heroku" :experience 0.25 :type :Cloud :img "https://maxcdn.icons8.com/Color/PNG/512/Logos/heroku-512.png"}
+                  {:name "Heroku" :experience 0.25 :type :Cloud :img "https://a.slack-edge.com/bfaba/img/api/hosting_heroku.png"}
                   ]
    :projects "* [davewm.github.io](https://davewm.github.io) – my online CV, written using clojurescript, reagent, D3, and reagent-material-ui. Hosted on github pages.
 * [Phonsole](https://www.phonsole.co.uk) – an app which allows you to use your phone to view console output from your PC. It’s split into 3 parts:
