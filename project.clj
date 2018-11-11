@@ -9,7 +9,7 @@
                  [cheshire "5.6.3"]
                  [hiccup "1.0.5"]
                  [net.mikera/imagez "0.10.0"]
-                 [clj-aws-s3 "0.3.10"]
+                 [amazonica "0.3.133"]
                  [environ "1.1.0"]
                  [hiccup "1.0.5"]
                  [endophile "0.1.2"]]

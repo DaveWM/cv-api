@@ -2,8 +2,8 @@
   (:require [clj-time.core :refer [date-time]]
             [mikera.image.core :as imagez]
             [clojure.java.io :refer [as-url input-stream as-file]]
-            [aws.sdk.s3 :as s3]
-            [clojure.string :refer [replace lower-case]]
+            [amazonica.aws.s3 :as s3]
+            [clojure.string :as s]
             [cheshire.core :refer [parse-string]]
             [environ.core :refer [env]])
   (:import [javax.imageio ImageIO])
@@ -62,7 +62,7 @@
                    :img (resource "resources/public/P.png")
                    :from (date-time 2015 11 1)
                    :to (date-time 2016 9 1)
-                   :url  "https://p.ota.to/"
+                   :url "https://p.ota.to/"
                    :bullet-points ["Developing web apps and marketing sites for clients such as Google and Nest."
                                    "Deployed apps to google app engine."
                                    "Working on an internal web app, using ES6, react and redux. I added tests using mocha, chai and sinon."]}
@@ -202,7 +202,7 @@
                   {:name "Graylog" :experience 0.75 :type :Misc :img "https://www.graylog.org/assets/logo-graylog-6ccfb3d4f7bfd0795c80bb616719f7d2f5151283f25c62aa0a6222994af2abeb.png"}
                   {:name "Splunk" :experience 0.75 :type :Misc :img "https://community.dynatrace.com/community/download/attachments/25789254/logo_splunk_white_high.png?version=2&modificationDate=1365474920330&api=v2"}
                   {:name "RabbitMQ" :experience 0.75 :type :Misc :img "https://www.rabbitmq.com/img/rabbitmq_logo_strap.png"}
-                  
+
                   {:name "Azure" :experience 3.5 :type :Cloud :img "http://www.3chillies.co.uk/~/media/images/services/azure/azure_migrate-to-azure_migrate-to-azure.png?la=en"}
                   {:name "AWS" :experience 1.5 :type :Cloud :img "http://static.asish.com.au/wp-content/uploads/2015/06/aws-logo-square-02.png"}
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
@@ -248,9 +248,15 @@ I am a big fan of open source projects, and I have made some small contributions
   (println "uploading" key)
   (let [out-stream (java.io.ByteArrayOutputStream.)]
     (ImageIO/write image "png" out-stream)
-    (let [bytes (.toByteArray out-stream)
+    (let [bytes     (.toByteArray out-stream)
           in-stream (java.io.ByteArrayInputStream. bytes)]
-      (s3/put-object credentials bucket key in-stream {:content-type "img/png" :content-length (alength bytes)} (s3/grant :all-users :read))
+      (s3/put-object :bucket-name bucket
+                     :key key
+                     :input-stream in-stream
+                     :metadata {:content-type "img/png"
+                                :content-length (alength bytes)})
+      (Thread/sleep 1000)
+      (s3/set-object-acl bucket key {:grant-all [["AllUsers" "Read"]]})
       (.close in-stream)
       (.close out-stream)
       (println "upload complete" key))))
@@ -258,16 +264,16 @@ I am a big fan of open source projects, and I have made some small contributions
 (def cv-data
   (update raw-data :technologies #(->> %
                                        (pmap (fn [{:keys [img name] :as tech}]
-                                              (let [s3-key (-> name
-                                                               (replace "#" "sharp")
-                                                               (replace " " "-")
-                                                               lower-case
-                                                               (str ".png"))]
-                                                (try
-                                                  (-> (as-url img)
-                                                      (imagez/load-image)
-                                                      (imagez/resize 200)
-                                                      (upload-to-s3! s3-key))
-                                                  (catch Exception e (println s3-key (.getMessage e))))
-                                                (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
+                                               (let [s3-key (-> name
+                                                                (s/replace "#" "sharp")
+                                                                (s/replace " " "-")
+                                                                s/lower-case
+                                                                (str ".png"))]
+                                                 (try
+                                                   (-> (as-url img)
+                                                       (imagez/load-image)
+                                                       (imagez/resize 200)
+                                                       (upload-to-s3! s3-key))
+                                                   (catch Exception e (println s3-key (.getMessage e))))
+                                                 (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
                                        doall)))
