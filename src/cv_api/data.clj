@@ -234,7 +234,7 @@ I am a big fan of open source projects, and I have made some small contributions
 * AngularStrap
 * Angular-local-storage"})
 
-(def bucket "cv-api")
+(def bucket "dm-cv-api")
 
 (def credentials (let [cred-file (as-file "aws-credentials.json")]
                    (if (.exists cred-file)
