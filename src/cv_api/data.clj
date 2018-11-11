@@ -122,7 +122,7 @@
                    :bullet-points ["First and second line support"
                                    "Worked on the internal ticketing system (written in PHP/MySQL)"]}]
    :technologies [{:name "C#" :experience 4 :type :language :img "https://raw.githubusercontent.com/sschmid/Entitas-CSharp/develop/Readme/Images/csharp.png"}
-                  {:name "SQL" :experience 3.5 :type :language :img "http://cdn.warer.com/media/Microsoft-SQL-Server-2008-Express-logo.png"}
+                  {:name "SQL" :experience 3.5 :type :language :img "https://www.vectorlogo.zone/logos/expressjs/expressjs-card.png"}
                   {:name "Javascript" :experience 4 :type :language :img "https://www.codementor.io/assets/page_img/learn-javascript.png"}
                   {:name "HTML 5" :experience 4 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1000px-HTML5_logo_and_wordmark.svg.png"}
                   {:name "CSS3" :experience 4 :type :language :img "http://connexo.de/img/logos/CSS3_Logo.png"}
@@ -133,7 +133,7 @@
                   {:name "TypeScript" :experience 1.25 :type :language :img "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"}
                   {:name "Python" :experience 0.8 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"}
                   {:name "Hy" :experience 0.1 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Hy_Header_Logo.svg/800px-Hy_Header_Logo.svg.png"}
-                  {:name "Haskell" :experience 0.25 :type :language :img "http://www.unixstickers.com/image/data/stickers/haskell/Haskell-purple.sh.png"}
+                  {:name "Haskell" :experience 0.25 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/1200px-Haskell-Logo.svg.png"}
                   {:name "Elm" :experience 0.25 :type :language :img "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Elm_logo.svg/512px-Elm_logo.svg.png"}
                   {:name "Elixir" :experience 0.1 :type :language :img "https://avatars2.githubusercontent.com/u/1481354?v=3&s=400"}
 
@@ -142,26 +142,26 @@
                   {:name "Material Design" :experience 2 :type :FE :img "http://i.imgur.com/AMf9X7E.jpg"}
                   {:name "Reagent" :experience 1.5 :type :FE :img "https://avatars1.githubusercontent.com/u/9254615?v=3&s=400"}
                   {:name "Re-Frame" :experience 1 :type :FE :img "https://raw.githubusercontent.com/Day8/re-frame/master/images/logo/re-frame_256w.png"}
-                  {:name "Twitter Bootstrap" :experience 2.5 :type :FE :img "http://dannykapp.com/wp-content/uploads/2015/07/bootstrap02.png"}
+                  {:name "Twitter Bootstrap" :experience 2.5 :type :FE :img "https://pbs.twimg.com/profile_images/563544962109693952/C9QJ7V3X.png"}
                   {:name "jQuery" :experience 1.5 :type :FE :img "http://precision-software.com/wp-content/uploads/2014/04/jQurery.gif"}
-                  {:name "React" :experience 1 :type :FE :img "http://red-badger.com/blog/wp-content/uploads/2015/04/react-logo-1000-transparent.png"}
+                  {:name "React" :experience 1 :type :FE :img "http://www.jsweet.org/wp-content/uploads/2016/04/react-logo.png"}
                   {:name "Redux" :experience 0.8 :type :FE :img "https://react-redux.herokuapp.com/logo.jpg"}
-                  {:name "D3" :experience 0.7 :type :FE :img "https://portalvhds06sf0zbnycwtg.blob.core.windows.net/uploads/D3.js_product_img_789405957_d4.png"}
+                  {:name "D3" :experience 0.7 :type :FE :img "https://raw.githubusercontent.com/d3/d3-logo/master/d3.png"}
                   {:name "RxJS" :experience 1.2 :type :FE :img "https://avatars3.githubusercontent.com/u/984368?v=3&s=400"}
                   {:name "Backbone" :experience 0.5 :type :FE :img "http://2.bp.blogspot.com/-xdZxDAStMTc/UQRY8nCnmuI/AAAAAAAAW98/sqp4pXNrlE8/s1600/Backbone_logo_logo_only.png"}
                   {:name "Material UI" :experience 0.5 :type :FE :img "http://cdn.designbeep.com/wp-content/uploads/2014/11/material-ui.jpg"}
-                  {:name "Materialize" :experience 0.3 :type :FE :img "http://materializecss.com/images/favicon/apple-touch-icon-152x152.png"}
+                  {:name "Materialize" :experience 0.3 :type :FE :img "http://www.nerdystickers.com/thumbnail.asp?file=assets/images/materializecss-001.png&maxx=300&maxy=0"}
                   {:name "NgRx" :experience 0.4 :type :FE :img "http://bertrandg.github.io/images/ng2_state/ngrx.png"}
-                  {:name "DataScript" :experience 0.4 :type :FE :img "https://s3-eu-west-1.amazonaws.com/cv-api/datascript.png"}
+                  {:name "DataScript" :experience 0.4 :type :FE :img "https://dbdb.io/media/logos/datascript.png"}
 
-                  {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://uitpakistan.com/Assets/images/awards/Mvc1.png"}
+                  {:name "ASP.NET MVC" :experience 3 :type :BE :img "http://ezitech.pk/wp-content/uploads/2016/04/MVC.png"}
                   {:name "ASP.NET Web API" :experience 2 :type :BE :img "http://eduardopires.net.br/wp-content/uploads/2013/07/ASP.Net-Web-API.png"}
                   {:name "WCF" :experience 3 :type :BE :img "http://www.howcsharp.com/img/0/44/windows-communication-foundation-wcf-300x222.jpg"}
-                  {:name "Entity Framework" :experience 2.5 :type :BE :img "http://www.ryadel.com/wp-content/uploads/2015/03/entity-framework-logo.jpg"}
+                  {:name "Entity Framework" :experience 2.5 :type :BE :img "https://www.asphostcentral.com/Images/EF_6.png"}
                   {:name "NodeJS" :experience 3 :type :BE :img "https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png"}
-                  {:name "Express" :experience 0.75 :type :BE :img "http://mean.io/system/assets/img/logos/express.png"}
+                  {:name "Express" :experience 0.75 :type :BE :img "https://uploads.toptal.io/blog/category/logo/25/express_js.png"}
                   {:name "Django" :experience 0.5 :type :BE :img "https://www.djangoproject.com/s/img/logos/django-logo-negative.png"}
-                  {:name "Djangae" :experience 0.5 :type :BE :img "http://www.rookiecode.com/wp-content/uploads/2011/11/djangogae.jpg"}
+                  {:name "Djangae" :experience 0.5 :type :BE :img "https://pbs.twimg.com/profile_images/524210197808435200/bhYXBjo0.png"}
                   {:name "Socket.io" :experience 0.8 :type :BE :img "https://www.pubnub.com/blog/wp-content/uploads/2014/07/SOCKETIOICON.gif"}
                   {:name "SignalR" :experience 0.75 :type :BE :img "https://avatars3.githubusercontent.com/u/931666?v=3&s=200"}
                   {:name "Ring" :experience 1.5 :type :BE :img "https://avatars3.githubusercontent.com/u/1689840?v=3&s=200"}
@@ -169,13 +169,13 @@
 
                   {:name "NPM" :experience 3 :type :tool :img "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/2000px-Npm-logo.svg.png"}
                   {:name "Yarn" :experience 1 :type :tool :img "https://tfrommen.de/wp-content/uploads/yarn-logo-400x400-1478627696.jpg"}
-                  {:name "Bower" :experience 2 :type :tool :img "http://bradypodion.io/images/giants/e8225b4f.bower.png"}
+                  {:name "Bower" :experience 2 :type :tool :img "https://bower.io/img/bower-logo.png"}
                   {:name "NuGet" :experience 3 :type :tool :img "http://nuproj.net/images/NuGet.png"}
                   {:name "Grunt" :experience 2 :type :tool :img "http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png"}
                   {:name "Gulp" :experience 1.25 :type :tool :img "https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png"}
-                  {:name "Make" :experience 0.5 :type :tool :img "http://logonoid.com/images/gnu-logo.png"}
+                  {:name "Make" :experience 0.5 :type :tool :img "https://files.digitalcitizen.info/logos/GNU/GNU-head-wallshadow.png"}
                   {:name "Babel" :experience 1 :type :tool :img "https://raw.githubusercontent.com/babel/logo/master/babel.png"}
-                  {:name "Leiningen" :experience 2.2 :type :tool :img "http://leiningen.org/img/leiningen.jpg"}
+                  {:name "Leiningen" :experience 2.2 :type :tool :img "https://leiningen.org/img/leiningen.jpg"}
                   {:name "Boot" :experience 0.1 :type :tool :img "http://boot-clj.com/assets/images/logos/boot-logo-3.png"}
                   {:name "Browserify" :experience 1 :type :tool :img "https://d21ii91i3y6o6h.cloudfront.net/gallery_images/from_proof/1647/large/1405586570/browserify-2-hexagon-sticker.png"}
                   {:name "Webpack" :experience 0.5 :type :tool :img "https://topheman.github.io/webpack-babel-starter/assets/974262647c82057b6078c432841a53ea.png"}
@@ -199,12 +199,12 @@
                   {:name "Sinon" :experience 0.5 :type :Testing :img "https://senchamarket-images-production.s3.amazonaws.com/uploads/screenshot/file/465/big_sinon_logo.png"}
 
                   {:name "Docker" :experience 1.75 :type :Misc :img "https://secure.gravatar.com/avatar/26da7b36ff8bb5db4211400358dc7c4e.jpg?s=512&r=g&d=mm"}
-                  {:name "Graylog" :experience 0.75 :type :Misc :img "https://www.graylog.org/assets/logo-graylog-6ccfb3d4f7bfd0795c80bb616719f7d2f5151283f25c62aa0a6222994af2abeb.png"}
+                  {:name "Graylog" :experience 0.75 :type :Misc :img "https://global-uploads.webflow.com/5ac133a161e365de41ae40d3/5ac133a161e36549ffae4144_logo-circle-graylog.png"}
                   {:name "Splunk" :experience 0.75 :type :Misc :img "https://community.dynatrace.com/community/download/attachments/25789254/logo_splunk_white_high.png?version=2&modificationDate=1365474920330&api=v2"}
                   {:name "RabbitMQ" :experience 0.75 :type :Misc :img "https://www.rabbitmq.com/img/rabbitmq_logo_strap.png"}
 
-                  {:name "Azure" :experience 3.5 :type :Cloud :img "http://www.3chillies.co.uk/~/media/images/services/azure/azure_migrate-to-azure_migrate-to-azure.png?la=en"}
-                  {:name "AWS" :experience 1.5 :type :Cloud :img "http://static.asish.com.au/wp-content/uploads/2015/06/aws-logo-square-02.png"}
+                  {:name "Azure" :experience 3.5 :type :Cloud :img "https://alligatortek.com/wp-content/uploads/2017/09/image115.png"}
+                  {:name "AWS" :experience 1.5 :type :Cloud :img "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2000px-Amazon_Web_Services_Logo.svg.png"}
                   {:name "Google Cloud Platform" :experience 0.75 :type :Cloud :img "http://www.averesystems.com/cmsFiles/relatedImages/logo_lockup_cloud_platform_icon_vertical.png"}
                   {:name "Rackspace" :experience 0.5 :type :Cloud :img "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/icons/og-image.png"}
                   {:name "Heroku" :experience 0.25 :type :Cloud :img "https://a.slack-edge.com/bfaba/img/api/hosting_heroku.png"}
@@ -236,13 +236,17 @@ I am a big fan of open source projects, and I have made some small contributions
 
 (def bucket "dm-cv-api")
 
-(def credentials (let [cred-file (as-file "aws-credentials.json")]
-                   (if (.exists cred-file)
-                     (-> (slurp cred-file)
-                         (parse-string true))
-                     (->> [:access-key :secret-key]
-                          (map (fn [key] {key (env key)}))
-                          (apply merge)))))
+(def credentials
+  (-> (let [cred-file (as-file "aws-credentials.json")]
+        (if (.exists cred-file)
+          (-> (slurp cred-file)
+              (parse-string true))
+          (->> [:access-key :secret-key]
+               (map (fn [key] {key (env key)}))
+               (apply merge))))
+      (assoc :endpoint "eu-west-2")))
+
+(amazonica.core/defcredential (:access-key credentials) (:secret-key credentials) "eu-west-2")
 
 (defn upload-to-s3! [image key]
   (println "uploading" key)
@@ -261,19 +265,32 @@ I am a big fan of open source projects, and I have made some small contributions
       (.close out-stream)
       (println "upload complete" key))))
 
+(defn format-s3-key [name]
+  (-> name
+      (s/replace "#" "sharp")
+      (s/replace " " "-")
+      s/lower-case
+      (str ".png")))
+
 (def cv-data
   (update raw-data :technologies #(->> %
-                                       (pmap (fn [{:keys [img name] :as tech}]
-                                               (let [s3-key (-> name
-                                                                (s/replace "#" "sharp")
-                                                                (s/replace " " "-")
-                                                                s/lower-case
-                                                                (str ".png"))]
-                                                 (try
-                                                   (-> (as-url img)
-                                                       (imagez/load-image)
-                                                       (imagez/resize 200)
-                                                       (upload-to-s3! s3-key))
-                                                   (catch Exception e (println s3-key (.getMessage e))))
-                                                 (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
+                                       (map (fn [{:keys [img name] :as tech}]
+                                              (let [s3-key (format-s3-key name)]
+                                                (assoc tech :img (str "https://" bucket ".s3.amazonaws.com/" s3-key)))))
                                        doall)))
+
+
+(defn resize-and-upload! [img name]
+  (let [s3-key (format-s3-key name)]
+    (-> (as-url img)
+        (imagez/load-image)
+        (imagez/resize 200)
+        (upload-to-s3! s3-key))))
+
+(defn upload-s3-images! []
+  (->> (:technologies raw-data)
+       (pmap (fn [{:keys [img name] :as tech}]
+               (try
+                 (resize-and-upload! img name)
+                 (catch Exception e (println name (.getMessage e))))))
+       doall))
