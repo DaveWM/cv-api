@@ -19,14 +19,19 @@
               :github-user "DaveWM"
               :linkedin-url "https://www.linkedin.com/in/davewm"
               :codewars-user "DaveWM"}
-   :summary "I am a senior front end web developer with a strong mathematical background, and 6 years' programming experience across a variety of industries. I also have experience with back end programming in Clojure, ASP.NET MVC/Web API and Django/[Djangae](https://potatolondon.github.io/djangae/), databases, designing/architecting systems, and setting up CI systems.
+   :summary "I am an experienced full-stack Clojure/ClojureScript dev, currently living in Liverpool. I have been a developer for 8 years, in which time I’ve worked across a variety of industries, languages, tech stacks, and job roles. I have designed, architected, and built web apps; worked on desktop apps with thousands of users; and created event-driven Kafka Streams applications.
 
-* On the front end, I have extensive experience with tools/frameworks such as Angular, React + Redux, Reagent + Re-Frame, Gulp/Grunt/Make, Babel, Karma/Mocha and Protractor. For personal projects, I have used [Re-Frame](https://github.com/Day8/re-frame), and also created my own mini-framework called [Larch](https://github.com/DaveWM/larch).
-* On the back end, I have 3 years’ experience with ASP.NET (MVC and Web API), Entity Framework, and testing frameworks Nunit and Specflow. For personal projects, I usually use Clojure with Componjure, Ring and Sente. I also have a small amount of experience with django (running on google appengine using djangae).
-* I have experience writing scripts in Node, Bash, Hy and ClojureScript.
-* I have created and contributed to a number of open source projects – see my github account for details.
-* I have used PAAS and IAAS services on various cloud platforms, such as Google App Engine, AWS, Azure, Openstack and Rackspace.
-* I have previous experience with microsoft technologies like WinForms, WPF, and WCF."
+In my free time, I maintain a few (small) open source projects, such as:
+* [reagent-material-ui](https://github.com/DaveWM/reagent-material-ui) - a [Reagent](https://reagent-project.github.io/) wrapper for [Material UI](https://reagent-project.github.io/)
+* [Larch](https://github.com/DaveWM/larch) - a very minimal CLJS "framework", loosely following the Elm architecture
+* [ngWizard](https://github.com/DaveWM/ngWizard) - a wizard component for AngularJS
+* [ATTyC](https://github.com/DaveWM/attyc) - type checking for AngularJS templates, using TypeScript
+
+I have also written a few open source web apps, such as:
+* [Lobster Writer](https://lobster-writer.co.uk/) - an app to help you write quality essays
+* [Phonsole](https://quality-controller-hamster-75314.netlify.com/) - view terminal output on your phone/tablet
+
+I write the [Clojure Conundrums](https://clojure-conundrums.co.uk/) blog."
    :education [{:from (date-time 2008 9 1)
                 :to (date-time 2011 7 1)
                 :name "University of Liverpool"
@@ -41,7 +46,7 @@
                              "Awarded Wynn Williams Memorial Prize for Astrophysics"
                              "11 GCSEs"]}]
    :hobbies [{:title "Motorsport"
-              :description "I Race in the BRSCC Mazda MX-5 Series"
+              :description "I have raced in the BRSCC Mazda MX5 and Track Attack Toyota MR2 series"
               :img (resource "resources/public/racing.jpg")}
              {:title "Reading"
               :description "I'm a big fan of sci-fi books"
@@ -49,10 +54,14 @@
              {:title "Snowboarding"
               :description "I enjoy snowboarding during the winter"
               :img (resource "resources/public/snowboarding.jpg")}]
-   :work-history [{:title "UVD"
+   :work-history [{:title "Funding Circle"
+                   :from (date-time 2018 1 8)
+                   :url "https://www.fundingcircle.com/uk/"
+                   :bullet-points ["Building event-driven Kafka Streams microservices in Clojure"]}
+                   {:title "UVD"
                    :img (resource "resources/public/UVD.png")
                    :from (date-time 2016 9 1)
-                   :to nil
+                   :to (date-time 2017 12 1)
                    :url "https://uvd.co.uk"
                    :bullet-points ["Worked on the [Limpid Markets](https://www.limpidmarkets.co.uk/) trading platform, which uses AngularJS, React and Redux. As well as writing new features and fixing bugs, I also provided direction on the overall architecture of the app."
                                    "Re-wrote the build system for Limpid Markets - see [this blog post](https://www.uvd.co.uk/blog/how-we-simplified-our-frontend-build/)"
@@ -100,7 +109,7 @@
                                    "Worked on an existing system for ingesting video files, processing them, and sending them to a 3rd party scheduling program. This system was composed of multiple C# console apps."
                                    "Was put in charge of the purchase order system (written in MVC 3), which was used for assigning budgets, producing financial reports, and sending purchase orders. I was completely responsible for a complete overhaul of the budgeting system, which involved lots of back end work, writing sql to migrate the existing data, and using angularjs and D3 to create a page for editing/visualising the budget."
                                    "Working with technologies such as Kendo UI, Angular JS, LESS, and D3 on the client side, and SignalR, PostSharp and Entity Framework on the server side."
-                                   "Performed several video file migrations from one storage system to another ¡V several hundred terabytes of data in total."
+                                   "Performed several video file migrations from one storage system to another - several hundred terabytes of data in total."
                                    ]}
                   {:title "CPL Software"
                    :img (resource "resources/public/CPL.jpg")
