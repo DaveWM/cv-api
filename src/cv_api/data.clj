@@ -23,7 +23,7 @@
 
 In my free time, I maintain a few (small) open source projects, such as:
 * [reagent-material-ui](https://github.com/DaveWM/reagent-material-ui) - a [Reagent](https://reagent-project.github.io/) wrapper for [Material UI](https://reagent-project.github.io/)
-* [Larch](https://github.com/DaveWM/larch) - a very minimal CLJS "framework", loosely following the Elm architecture
+* [Larch](https://github.com/DaveWM/larch) - a very minimal CLJS \"framework\", loosely following the Elm architecture
 * [ngWizard](https://github.com/DaveWM/ngWizard) - a wizard component for AngularJS
 * [ATTyC](https://github.com/DaveWM/attyc) - type checking for AngularJS templates, using TypeScript
 
